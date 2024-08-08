@@ -12,6 +12,6 @@ React + Node.js + Express + MongoDB + StripeAPI
 ### Getting Started
 - 	[Wireframes](https://www.figma.com/design/Qdc4oj0InVHO1fayzd2j9i/GA_Project4%EF%BC%9A-Jewellery-E-commerce-website?node-id=0-1&t=wzI68T7lBrJA6sby-1)
 - 	[ERD](https://miro.com/welcomeonboard/MHpxbGtwTWFCNENCbkZpcEpPeHV4ZjlIdDVwRzdmMFlhbDExTDNydXl2MUpPWXJJelVqT2l3anNnOHc5WW9pVXwzMDc0NDU3MzQ3NTgxOTY0ODMyfDI=?share_link_id=254373635289)
-- 	[Deployed app](https://www.example.com)
+- 	[Deployed app](https://kokoandco.onrender.com)
 
 ### Next Steps:
