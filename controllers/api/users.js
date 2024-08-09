@@ -27,7 +27,7 @@ async function create(req, res) {
 
 async function login(req, res) {
   try {
-    console.log('Login request received with:', req.body);
+    // console.log('Login request received with:', req.body);
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ message: 'Missing email or password' });
@@ -45,7 +45,7 @@ async function login(req, res) {
     const token = createJWT(user);
     console.log('Login successful, returning token');
     res.json( token );
-    console.log(token)
+    // console.log(token)
   } catch (err) {
     console.error('Login error:', err);
     res.status(400).json({ message: 'Bad Credentials' });
@@ -54,7 +54,7 @@ async function login(req, res) {
 
 function checkToken(req, res) {
   // req.user will always be there for you when a token is sent
-  console.log('req.user', req.user);
+  // console.log('req.user', req.user);
   res.json(req.exp);
 }
 /*-- Helper Functions --*/
