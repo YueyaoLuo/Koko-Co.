@@ -1,0 +1,46 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .d-flex{
+    align-items: center;
+  }
+
+  .navbar-img {
+    display: inline-block;
+    height: 43px;
+  }
+
+.nav-item {
+    list-style: none;
+}
+
+  .nav-link {
+    color: black;
+    align-self: center;
+  }
+
+  
+  .nav-link:hover {
+    color: black;
+  }
+
+form{
+    gap: 0;
+}
+
+form input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 0;
+    font-size: 1.5vmin;
+  }
+  
+  button[type="submit"] {
+    border: 0;
+    margin: 0;
+  }
