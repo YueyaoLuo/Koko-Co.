@@ -1,11 +1,13 @@
-import { Link, Routes, Route, Router } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { getUser } from "../../utilities/users-service";
+import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
 import AuthPage from "../../pages/AuthPage/AuthPage";
-import * as userService from "../../utilities/users-service";
 export default function NavBar({user, setUser}) {
-
+  function handleLogOut(){
+    userService.logOut()
+    setUser(null)
+  }
 
   return (
     <>
@@ -16,7 +18,6 @@ export default function NavBar({user, setUser}) {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="#"
                 id="navbarScrollingDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -74,15 +75,48 @@ export default function NavBar({user, setUser}) {
             {/* check if user has an account or not, if yes, show account, if no show AuthPage */}
             
             {user ? (
-              <Link className="nav-link" to="/account">
+              <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                id="navbarScrollingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                
+              >
                 <ion-icon name="person-outline"></ion-icon>
-            
               </Link>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="navbarScrollingDropdown"
+              >
+                <li>
+                  <Link className="dropdown-item" to="/account">
+                    My Account
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/login" onClick={handleLogOut}>
+                    Log Out
+                  </Link>
+                </li>
+              </ul>
+            </li>
             ) : (
               <Link className="nav-link" to="/login">
                 <ion-icon name="person-outline"></ion-icon>
               </Link>
             )}
+
+
+
+
+
+
+
+
+
+
 
             <form className="d-flex">
               <input type="text" name="search" placeholder="Search" />
@@ -96,6 +130,7 @@ export default function NavBar({user, setUser}) {
 
       <Routes>
         <Route path="/login" element={<AuthPage setUser={setUser} />}>
+        
         </Route>
       </Routes>
     </>

@@ -19,11 +19,11 @@ const navigate = useNavigate()
     evt.preventDefault();
     try {
       const user = await usersService.login(credentials);
-      console.log("Login User: ", user);
+      // console.log("Login User: ", user);
       setUser(user);
-      console.log(user)
+      // console.log(user)
       navigate('/');
-      console.log('navigating...')
+      // console.log('navigating...')
     } catch (err) {
       // console.error("Login Error: ", err.message);
       setError("Log In Failed - Try Again");
