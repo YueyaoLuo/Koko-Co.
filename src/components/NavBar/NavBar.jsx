@@ -1,8 +1,8 @@
 import { Link, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
 import AuthPage from "../../pages/AuthPage/AuthPage";
+import HomePage from "../../pages/HomePage/HomePage";
 export default function NavBar({user, setUser}) {
   function handleLogOut(){
     userService.logOut()
@@ -130,8 +130,9 @@ export default function NavBar({user, setUser}) {
 
       <Routes>
         <Route path="/login" element={<AuthPage setUser={setUser} />}>
-        
         </Route>
+        {/* <Route path='/' element={<HomePage />}> */}
+        {/* </Route> */}
       </Routes>
     </>
   );

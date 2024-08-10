@@ -1,0 +1,33 @@
+
+
+.banner-container {
+    position: relative;
+    height: 800px; 
+    background-image: url('https://kokoandco.s3.ap-southeast-2.amazonaws.com/Home+page/Untitled+design.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .banner {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Add a dark overlay */
+    color: #fff;
+    padding-left: 20px;
+  }
+  
+  h1, p {
+    margin-bottom: 20px;
+  }
+  
+  .banner-text{
+    position: absolute;
+    left: 20px;
+    width: 30%;
+  }
+
+  .btn-primary{
+    background-color: #B8907A;
+    border-color: #B8907A;
+
+  }
