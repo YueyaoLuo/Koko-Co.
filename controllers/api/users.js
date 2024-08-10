@@ -27,7 +27,7 @@ async function create(req, res) {
 
 async function login(req, res) {
   try {
-    // console.log('Login request received with:', req.body);
+    console.log('Login request received with:', req.body);
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ message: 'Missing email or password' });

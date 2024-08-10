@@ -1,7 +1,5 @@
 import "./App.css";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 
@@ -10,12 +8,7 @@ export default function App() {
 
   return (
     <main className="App">
-      
-  
-        
-        <NavBar/>
-        
-
+      <NavBar user={user} setUser={setUser} />
     </main>
   );
 }

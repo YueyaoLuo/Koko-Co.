@@ -2,7 +2,7 @@ require('dotenv').config({ path: '.env.local' });
 require('./config/database');
 
 const Category = require('./models/category');
-const Item = require('./models/item');
+const Product = require('./models/product');
 
 (async function () {
     await Category.deleteMany({});
@@ -13,8 +13,8 @@ const Item = require('./models/item');
         { name: 'Rings', sortOrder: 40 },
     ]);
 
-    await Item.deleteMany({});
-    const items = await Item.create([
+    await Product.deleteMany({});
+    const products = await Product.create([
         //bracelets
         { name: 'Love Links', category: categories[0], price: 32, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png'] },
         { name: 'Lucy Knot', category: categories[0], price: 32, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/lucky+knot+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/lucky+knot+2.jpg'] },
@@ -49,7 +49,7 @@ const Item = require('./models/item');
         { name: 'Timeless', category: categories[3], price: 42, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/Timeless+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/Timeless+2.jpg'] },
     ]);
 
-    console.log(items)
+    console.log(products)
 
     process.exit();
 

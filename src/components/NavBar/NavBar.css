@@ -40,7 +40,12 @@ form input {
     font-size: 1.5vmin;
   }
   
-  button[type="submit"] {
+  button.btn-search {
     border: 0;
     margin: 0;
+  }
+
+
+  .form-container-login{
+  border-right: .1vmin solid var(--tan-3);
   }

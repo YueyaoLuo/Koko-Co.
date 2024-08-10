@@ -1,6 +1,6 @@
 // src/components/LoginForm/LoginForm.jsx
-
-import { useState } from "react";
+import { useState  } from "react";
+import {useNavigate} from "react-router-dom";
 import * as usersService from "../../utilities/users-service";
 
 export default function LoginForm({ setUser }) {
@@ -9,7 +9,7 @@ export default function LoginForm({ setUser }) {
     password: "",
   });
   const [error, setError] = useState("");
-
+const navigate = useNavigate()
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError("");
@@ -19,8 +19,11 @@ export default function LoginForm({ setUser }) {
     evt.preventDefault();
     try {
       const user = await usersService.login(credentials);
-      // console.log("Login User: ", user);
+      console.log("Login User: ", user);
       setUser(user);
+      console.log(user)
+      navigate('/');
+      console.log('navigating...')
     } catch (err) {
       // console.error("Login Error: ", err.message);
       setError("Log In Failed - Try Again");
@@ -47,7 +50,7 @@ export default function LoginForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <button type="submit">LOG IN</button>
+          <button type="submit" className="btn-auth">LOG IN</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

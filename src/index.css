@@ -21,7 +21,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  
   padding: 2vmin;
   height: 100vh;
 }
@@ -69,7 +69,7 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
+ 
   color: var(--text-dark);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
@@ -80,9 +80,9 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+ 
+  /* border: .1vmin solid var(--tan-3); */
+  /* border-radius: 1vmin; */
 }
 
 p.error-message {
@@ -107,7 +107,7 @@ input {
   padding: 1vmin;
   font-size: 2vmin;
   border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
+  /* border-radius: .5vmin; */
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
@@ -144,10 +144,16 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: black;
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+  
+}
+
+.btn-auth {
+  margin: 1vmin;
+  padding: 1vmin;
 }
