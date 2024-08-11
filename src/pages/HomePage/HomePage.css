@@ -1,3 +1,13 @@
+.small-banner{
+    background-color: #BFB688;
+}
+
+.small-banner > p{
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
 .banner-container {
   position: relative;
   height: 800px;

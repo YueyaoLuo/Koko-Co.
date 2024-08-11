@@ -4,6 +4,7 @@ import "./HomePage.css";
 export default function HomePage() {
   return (
     <>
+    <div className="small-banner"><p><strong>Free standard shipping over $100</strong></p></div>
       {/* banner */}
       <div className="banner-container">
         <div className="banner d-flex justify-content-center align-items-center">
