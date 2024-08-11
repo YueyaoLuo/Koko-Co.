@@ -1,12 +1,10 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
-import AuthPage from "../../pages/AuthPage/AuthPage";
-import HomePage from "../../pages/HomePage/HomePage";
-export default function NavBar({user, setUser}) {
-  function handleLogOut(){
-    userService.logOut()
-    setUser(null)
+export default function NavBar({ user, setUser }) {
+  function handleLogOut() {
+    userService.logOut();
+    setUser(null);
   }
 
   return (
@@ -30,39 +28,41 @@ export default function NavBar({user, setUser}) {
                 aria-labelledby="navbarScrollingDropdown"
               >
                 <li>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/jewellery/bracelets">
                     Bracelets
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/jewellery/earrings">
                     Earrings
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/jewellery/necklaces">
                     Necklaces
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/jewellery/rings">
                     Rings
                   </Link>
                 </li>
               </ul>
             </li>
 
-            <Link className="nav-link" to="/newRelease">
+            <Link className="nav-link" to="/jewellery/newrelease">
               New Release
             </Link>
             <Link className="nav-link" to="/workshop">
               Workshop
             </Link>
           </div>
+
           {/* logo  */}
           <Link to="/">
             <img className="navbar-img" src="/logo_nobg.png" alt="logo" />
           </Link>
+
           {/* right side icons and search bar */}
           <div className="d-flex flex-row-reverse bd-highlight">
             <Link className="nav-link" to="/wishlist">
@@ -73,51 +73,45 @@ export default function NavBar({user, setUser}) {
             </Link>
 
             {/* check if user has an account or not, if yes, show account, if no show AuthPage */}
-            
+
             {user ? (
               <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                id="navbarScrollingDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                
-              >
-                <ion-icon name="person-outline"></ion-icon>
-              </Link>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="navbarScrollingDropdown"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/account">
-                    My Account
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/login" onClick={handleLogOut}>
-                    Log Out
-                  </Link>
-                </li>
-              </ul>
-            </li>
+                <Link
+                  className="nav-link dropdown-toggle"
+                  id="navbarScrollingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <ion-icon name="person-outline"></ion-icon>
+                </Link>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarScrollingDropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/account">
+                      My Account
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="dropdown-item"
+                      to="/login"
+                      onClick={handleLogOut}
+                    >
+                      Log Out
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             ) : (
               <Link className="nav-link" to="/login">
                 <ion-icon name="person-outline"></ion-icon>
               </Link>
             )}
 
-
-
-
-
-
-
-
-
-
-
+            {/* search bar */}
             <form className="d-flex">
               <input type="text" name="search" placeholder="Search" />
               <button className="btn btn-search" type="submit">
@@ -127,13 +121,6 @@ export default function NavBar({user, setUser}) {
           </div>
         </div>
       </nav>
-
-      <Routes>
-        <Route path="/login" element={<AuthPage setUser={setUser} />}>
-        </Route>
-        {/* <Route path='/' element={<HomePage />}> */}
-        {/* </Route> */}
-      </Routes>
     </>
   );
 }
