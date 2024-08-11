@@ -4,7 +4,7 @@ import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../../pages/HomePage/HomePage";
 import AuthPage from "../../pages/AuthPage/AuthPage";
-
+import Footer from "../../components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -17,6 +17,7 @@ export default function App() {
       <div style={{ marginTop: "51px" }}>
         <HomePage />
       </div>
+      <Footer />
 
 
 

@@ -1,0 +1,48 @@
+.sticky-bottom{
+    width: 100%;
+    position: sticky;
+  }
+
+  .footer-container{
+    height: auto;
+    margin: 20px;
+  }
+
+  .btn-subscribe{
+    margin-left: 5px;
+    border: .1vmin solid #B8907A;
+    border-radius: .5vmin;
+    background-color: #B8907A;
+  }
+  
+  .text-footer{
+    text-align: start;
+  }
+
+  .newsletter {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .nav-link{
+    display: inline-block;
+    
+  }
+
+ 
+  .social{
+    display: flex;
+    align-items: center;
+  }
+
+  .text-social{
+    margin-bottom: 0;
+  }
+
+  h6{
+    text-align: left;
+  }
+
+  .row-footer{
+    align-items: start;
+  }

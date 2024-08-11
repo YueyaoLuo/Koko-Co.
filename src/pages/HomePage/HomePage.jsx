@@ -27,24 +27,24 @@ export default function HomePage() {
       </div>
 
       {/* shop by category */}
-      <h3>Shop By Category</h3>
-      <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div class="col">
-          <div class="card h-100">
+      <h3 className="category-title">Shop By Category</h3>
+      <div className="row row-cols-1 row-cols-md-5 g-4 row-category">
+        <div className="col">
+          <div className="card card-category h-100">
             <Link className="nav-link" to="/jewellery/newrelease">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+2.jpg"
-                class="card-img-top"
+                className="card-img-top"
                 alt="new"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">New Release</h5>
+              <div className="card-body">
+                <h5 className="card-title">New Release</h5>
               </div>
             </Link>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
             <Link className="nav-link" to="/jewellery/bracelets">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png"
@@ -57,8 +57,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
             <Link className="nav-link" to="/jewellery/earrings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/earrings/Curly+C+2.png"
@@ -71,22 +71,22 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
             <Link className="nav-link" to="/jewellery/necklaces">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg"
                 class="card-img-top"
                 alt="necklace"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Necklaces</h5>
+              <div className="card-body">
+                <h5 className="card-title">Necklaces</h5>
               </div>
             </Link>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
             <Link className="nav-link" to="/jewellery/rings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/miss+u+2.jpg"
@@ -102,7 +102,7 @@ export default function HomePage() {
       </div>
 
       {/* gift season */}
-      <div className="card mb-3 carousel">
+      <div className="card mb-3 card-carousel">
       <div className="row g-0">
         <div className="col-md-8">
           <div
