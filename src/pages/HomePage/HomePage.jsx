@@ -30,7 +30,7 @@ export default function HomePage() {
       <h3 className="category-title">Shop By Category</h3>
       <div className="row row-cols-1 row-cols-md-5 g-4 row-category">
         <div className="col">
-          <div className="card card-category h-100">
+          <div className="card h-100">
             <Link className="nav-link" to="/jewellery/newrelease">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+2.jpg"

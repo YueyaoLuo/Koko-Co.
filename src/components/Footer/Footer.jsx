@@ -18,7 +18,7 @@ export default function footer() {
                 <input
                   type="text"
                   name="input"
-                  placeholder="Email"
+                  placeholder="Your email goes here..."
                   className="form-control"
                 />
                 <button className="btn btn-subscribe" type="submit">

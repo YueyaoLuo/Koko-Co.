@@ -10,9 +10,10 @@
 
   .btn-subscribe{
     margin-left: 5px;
-    border: .1vmin solid #B8907A;
+    border: .1vmin solid black;
     border-radius: .5vmin;
-    background-color: #B8907A;
+    background-color: black;
+    color: white;
   }
   
   .text-footer{

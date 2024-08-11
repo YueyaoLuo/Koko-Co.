@@ -26,8 +26,8 @@ p {
 }
 
 .btn-primary {
-  background-color: #b8907a;
-  border-color: #b8907a;
+  background-color: black;
+  border-color: black;
   text-align: start;
 }
 
@@ -35,10 +35,6 @@ p {
     margin:0
 }
 
-.card-category{
-border: 0;
-
-}
 .nav-link {
   color: black;
   align-self: center;
