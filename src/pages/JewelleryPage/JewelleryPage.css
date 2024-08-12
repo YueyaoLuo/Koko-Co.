@@ -17,6 +17,33 @@
     flex: 1;
 }
 
-.category-img {
+.row-category{
+    justify-content: center;
+    margin-left: -8px;
+    margin-right: -8px;
+    width: 55%;
+}
+
+.container-category{
+    height:auto;
+}
+
+.category-img{
     border-radius: 50%;
+    border: 1px solid rgb(0,0,0,0.125);
+}
+
+.card-category{
+    border: 0;
+ 
+}
+
+.category-title{
+    padding-top: 20px;
+}
+
+.category-link{
+    
+    display: block;
+    
 }

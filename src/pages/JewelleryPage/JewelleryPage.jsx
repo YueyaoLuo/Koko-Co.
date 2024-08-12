@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as jewelleryAPI from "../../utilities/jewellery-api";
 import "./JewelleryPage.css";
 export default function JewelleryPage() {
@@ -15,99 +15,86 @@ export default function JewelleryPage() {
 
   return (
     <>
-    {/* categories */}
-    <h3 className="category-title">All Jewellery</h3>
-      <div className="row row-cols-1 row-cols-md-5 g-8 row-category">
-        <div className="col">
-          <div className="card h-50">
-            <Link className="nav-link" to="/jewellery/newrelease">
+      {/* categories */}
+      <h3 className="category-title">All Jewellery</h3>
+      <div className="container container-category">
+        <div className="row row-cols-md-5 g-3 row-category">
+          <div className="col card-category">
+            <Link className="nav-link category-link" to="/jewellery/newrelease">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+2.jpg"
-                className="card-img-top category-img "
+                className="card-img-top category-img category-img "
                 alt="new"
               ></img>
-              <div className="card-body">
-                <h5 className="card-title">New Release</h5>
-              </div>
+
+              <p className="card-title">New Release</p>
             </Link>
           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <Link className="nav-link" to="/jewellery/bracelets">
+          <div className="col card-category">
+            <Link className="nav-link category-link" to="/jewellery/bracelets">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png"
-                class="card-img-top"
+                class="card-img-top category-img"
                 alt="bracelet"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Bracelets</h5>
-              </div>
+
+              <p class="card-title">Bracelets</p>
             </Link>
           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <Link className="nav-link" to="/jewellery/earrings">
+          <div className="col card-category">
+            <Link className="nav-link category-link" to="/jewellery/earrings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/earrings/Curly+C+2.png"
-                class="card-img-top"
+                class="card-img-top category-img"
                 alt="earing"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Earrings</h5>
-              </div>
+
+              <p class="card-title">Earrings</p>
             </Link>
           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <Link className="nav-link" to="/jewellery/necklaces">
+
+          <div className="col card-category">
+            <Link className="nav-link category-link" to="/jewellery/necklaces">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg"
-                class="card-img-top"
+                class="card-img-top category-img"
                 alt="necklace"
               ></img>
-              <div className="card-body">
-                <h5 className="card-title">Necklaces</h5>
-              </div>
+
+              <p className="card-title">Necklaces</p>
             </Link>
           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <Link className="nav-link" to="/jewellery/rings">
+          <div className="col card-category">
+            <Link className="nav-link category-link" to="/jewellery/rings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/miss+u+2.jpg"
-                class="card-img-top"
+                class="card-img-top category-img"
                 alt="ring"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Rings</h5>
-              </div>
+
+              <p class="card-title">Rings</p>
             </Link>
           </div>
         </div>
       </div>
       {/* all jewellery */}
-        <div className="row row-cols-1 row-cols-md-5 g-5 row-jewellery">
-          {jewellery.map((item) => (
-            <div className="col" key={item._id}>
-              <div className="card h-100" key={item._id}>
-                <img
-                  src={item.imageUrls[0]}
-                  className="card-img-top"
-                  alt="pic"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">${item.price}</p>
-                </div>
+      <div className="row row-cols-1 row-cols-md-5 g-5 row-jewellery">
+        {jewellery.map((item) => (
+          <div className="col" key={item._id}>
+            <div className="card h-100" key={item._id}>
+              <img
+                src={item.imageUrls[0]}
+                className="card-img-top"
+                alt="pic"
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">{item.name}</h5>
+                <p className="card-text">${item.price}</p>
               </div>
             </div>
-          ))}
-        </div>
-      
+          </div>
+        ))}
+      </div>
     </>
   );
 }
