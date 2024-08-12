@@ -50,6 +50,10 @@ p {
   align-self: center;
 }
 
+.nav-link:active {
+  color: #B8907A;
+ }
+
 .category-title {
   margin: 20px;
 }

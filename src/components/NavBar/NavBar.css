@@ -26,6 +26,14 @@
   color: black;
 }
 
+.nav-link:active{
+  color: #B8907A;
+}
+
+.nav-link:focus{
+  color: #B8907A;
+}
+
 form {
   gap: 0;
 }

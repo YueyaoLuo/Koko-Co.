@@ -19,9 +19,9 @@
 
 .row-category{
     justify-content: center;
-    margin-left: -8px;
-    margin-right: -8px;
-    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .container-category{
@@ -35,7 +35,6 @@
 
 .card-category{
     border: 0;
- 
 }
 
 .category-title{
@@ -43,7 +42,7 @@
 }
 
 .category-link{
-    
+
     display: block;
     
 }
