@@ -159,6 +159,16 @@ button:hover {
   border: .1vmin solid #B8907A;
 }
 
+.btn-primary:active {
+  background-color: #B8907A;
+  border: .1vmin solid #B8907A;
+}
+
+.btn-primary:focus {
+  background-color: #B8907A;
+  border: .1vmin solid #B8907A;
+}
+
 .btn-auth {
   margin: 1vmin;
   padding: 1vmin;

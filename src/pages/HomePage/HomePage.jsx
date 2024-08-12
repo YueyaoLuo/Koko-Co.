@@ -18,7 +18,7 @@ export default function HomePage() {
                   for a statement necklace, elegant earrings, or a delicate
                   bracelet, we have the perfect piece to elevate your look.
                 </p>
-                <Link path="#" className="btn btn-primary btn-lg">
+                <Link path="/jewellery" className="btn btn-primary btn-lg">
                   Shop Now
                 </Link>
               </div>

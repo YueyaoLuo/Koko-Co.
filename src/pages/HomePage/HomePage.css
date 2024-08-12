@@ -60,3 +60,8 @@ p {
   margin-top: 50px;
   background-color: #bfb688;
 }
+
+.carousel-control-next:hover{
+  background-color: transparent;
+  border: 0;
+}
