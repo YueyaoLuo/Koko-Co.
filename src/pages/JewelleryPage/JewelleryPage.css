@@ -1,0 +1,22 @@
+
+.card-img-top {
+    flex-grow: 1;
+  }
+
+.row-jewellery {
+ display: flex;
+ width: 100%;
+ justify-content: start;
+ align-items: stretch;
+ margin-left: 0;
+ margin-top: 0;
+}
+
+
+.card-body{
+    flex: 1;
+}
+
+.category-img {
+    border-radius: 50%;
+}

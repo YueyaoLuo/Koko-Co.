@@ -65,3 +65,8 @@ p {
   background-color: transparent;
   border: 0;
 }
+
+.carousel-control-prev:hover{
+  background-color: transparent;
+  border: 0;
+}

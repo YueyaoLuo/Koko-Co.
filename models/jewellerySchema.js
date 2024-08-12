@@ -1,6 +1,7 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const itemSchema = new Schema({
+const jewellerySchema = new Schema({
   name: { type: String, required: true },
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
   price: { type: Number, required: true },
@@ -9,4 +10,4 @@ const itemSchema = new Schema({
   timestamps: true
 });
 
-module.exports = itemSchema;
+module.exports = jewellerySchema;

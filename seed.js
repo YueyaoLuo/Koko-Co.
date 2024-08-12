@@ -2,7 +2,7 @@ require('dotenv').config({ path: '.env.local' });
 require('./config/database');
 
 const Category = require('./models/category');
-const Product = require('./models/product');
+const Jewellery = require('./models/jewellery');
 
 (async function () {
     await Category.deleteMany({});
@@ -13,8 +13,8 @@ const Product = require('./models/product');
         { name: 'Rings', sortOrder: 40 },
     ]);
 
-    await Product.deleteMany({});
-    const products = await Product.create([
+    await Jewellery.deleteMany({});
+    const produs = await Jewellery.create([
         //bracelets
         { name: 'Love Links', category: categories[0], price: 32, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png'] },
         { name: 'Lucy Knot', category: categories[0], price: 32, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/lucky+knot+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/lucky+knot+2.jpg'] },
@@ -37,7 +37,7 @@ const Product = require('./models/product');
         { name: 'Butterfly Vintage', category: categories[2], price: 25, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+2.jpg'] },
         { name: 'Heart of Pearl', category: categories[2], price: 56, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Heart+of+Pearl+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Heart+of+Pearl+2.jpg'] },
         { name: 'Pearlbean', category: categories[2], price: 56, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Pearlbean+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Pearlbean+2.jpg'] },
-        { name: 'Rose Avenue', category: categories[2], price: 48, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue.jpg'] },
+        { name: 'Rose Avenue', category: categories[2], price: 48, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg'] },
         { name: 'Simplicity', category: categories[2], price: 48, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Simplicity.jpg'] },
         { name: 'Summer Tulip', category: categories[2], price: 28, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Summer+Tulip.jpg'] },
         //rings
@@ -49,7 +49,7 @@ const Product = require('./models/product');
         { name: 'Timeless', category: categories[3], price: 42, imageUrls: ['https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/Timeless+1.jpg', 'https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/Timeless+2.jpg'] },
     ]);
 
-    console.log(products)
+    console.log(produs)
 
     process.exit();
 
