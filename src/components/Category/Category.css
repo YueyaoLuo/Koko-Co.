@@ -1,0 +1,17 @@
+
+.row-category{
+    margin:0
+}
+
+.nav-link {
+  color: black;
+  align-self: center;
+}
+
+.nav-link:active {
+  color: #B8907A;
+ }
+
+.category-title {
+  margin: 20px;
+}

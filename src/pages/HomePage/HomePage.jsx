@@ -1,7 +1,7 @@
 import "./HomePage.css";
 import Banner from "../../components/Banner/Banner";
 import Category from "../../components/Category/Category";
-import GiftSeason from "../../components/GiftSeason/GiftSeason";
+import Carousel from "../../components/Carousel/Carousel";
 
 export default function HomePage() {
   return (
@@ -19,7 +19,7 @@ export default function HomePage() {
       <Category />
 
       {/* gift season */}
-      <GiftSeason />
+      <Carousel />
     </>
   );
 }

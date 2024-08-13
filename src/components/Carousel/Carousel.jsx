@@ -1,4 +1,4 @@
-
+import "./Carousel.css"
 
 export default function GiftSeason(){
     return(
