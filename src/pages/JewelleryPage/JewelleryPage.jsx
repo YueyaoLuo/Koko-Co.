@@ -81,14 +81,14 @@ export default function JewelleryPage() {
       <div className="row row-cols-1 row-cols-md-5 g-5 row-jewellery">
         {jewellery.map((item) => (
           <div className="col" key={item._id}>
-            <div className="card h-100" key={item._id}>
+            <div className="card h-100 card-all" key={item._id}>
               <img
                 src={item.imageUrls[0]}
                 className="card-img-top"
                 alt="pic"
               ></img>
               <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
+                <p className="card-title"><strong>{item.name}</strong></p>
                 <p className="card-text">${item.price}</p>
               </div>
             </div>

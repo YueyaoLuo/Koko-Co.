@@ -17,6 +17,10 @@
     flex: 1;
 }
 
+.card-all {
+    border:none;
+}
+
 .row-category{
     justify-content: center;
     margin-left: auto;
