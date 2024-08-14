@@ -1,0 +1,17 @@
+.row-detail-page{
+    margin-top: 100px;
+}
+
+.card-jewellery-detail{
+    border: none;
+
+}
+.btn-add-to-bag {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.material-title{
+    margin: 0
+}
