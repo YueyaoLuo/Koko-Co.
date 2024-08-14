@@ -28,6 +28,11 @@ export default function NavBar({ user, setUser }) {
                 aria-labelledby="navbarScrollingDropdown"
               >
                 <li>
+                  <Link className="dropdown-item" to="/jewellery">
+                    All Jewellery
+                  </Link>
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/jewellery/bracelets">
                     Bracelets
                   </Link>
