@@ -6,6 +6,8 @@ const jewellerySchema = new Schema({
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
   price: { type: Number, required: true },
   imageUrls: [String],
+  description: {type: String},
+  materials: [String],
 }, {
   timestamps: true
 });
