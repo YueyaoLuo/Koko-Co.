@@ -7,10 +7,10 @@ const Jewellery = require('./models/jewellery');
 (async function () {
     await Category.deleteMany({});
     const categories = await Category.create([
-        { name: 'Bracelets', sortOrder: 10 },
-        { name: 'Earrings', sortOrder: 20 },
-        { name: 'Necklaces', sortOrder: 30 },
-        { name: 'Rings', sortOrder: 40 },
+        { name: 'bracelets', sortOrder: 10 },
+        { name: 'earrings', sortOrder: 20 },
+        { name: 'necklaces', sortOrder: 30 },
+        { name: 'rings', sortOrder: 40 },
     ]);
 
     await Jewellery.deleteMany({});

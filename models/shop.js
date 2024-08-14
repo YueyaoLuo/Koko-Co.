@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const productSchema = require('./productSchema');
+const jewellerySchema = require('./jewellerySchema');
 
 const itemSchema = new Schema({
     qty: { type: Number, default: 1 },
-    product: productSchema
+    jewellery: jewellerySchema
   }, {
     timestamps: true,
     toJSON: { virtuals: true }
@@ -39,32 +39,32 @@ shopSchema.statics.getCart = function (userId) {
 };
 
 // Instance method for adding an item to a cart (unpaid order)
-shopSchema.methods.addProductToCart = async function (productId) {
+shopSchema.methods.addProductToCart = async function (jewelleryId) {
     // 'this' keyword is bound to the cart (order doc)
     const cart = this;
     // Check if the item already exists in the cart
-    const item = cart.items.find(item => item.product._id.equals(productId));
+    const item = cart.items.find(item => item.jewellery._id.equals(jewelleryId));
     if (item) {
         // It already exists, so increase the qty
         item.qty += 1;
     } else {
         // Get the product from the "catalog"
         // Note how the mongoose.model method behaves as a getter when passed one arg vs. two
-        const Product = mongoose.model('Product');
-        const product = await Product.findById(productId);
+        const Jewellery = mongoose.model('Jewellery');
+        const jewellery = await Jewellery.findById(jewelleryId);
         // The qty of the new product object being pushed in defaults to 1
-        cart.items.push({ product });
+        cart.items.push({ jewellery });
     }
     // return the save() method's promise
     return cart.save();
 };
 
 // Instance method to set an product's qty in the cart
-shopSchema.methods.setProductQty = function (productId, newQty) {
+shopSchema.methods.setProductQty = function (jewelleryId, newQty) {
     // this keyword is bound to the cart (order doc)
     const cart = this;
     // Find the item in the cart for the menu item
-    const item = cart.items.find(item => item.product._id.equals(productId));
+    const item = cart.items.find(item => item.product._id.equals(jewelleryId));
     if (item && newQty <= 0) {
         // Calling deleteOne, removes the item subdoc from the cart.items array
         item.deleteOne();

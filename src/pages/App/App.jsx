@@ -7,7 +7,7 @@ import AuthPage from "../../pages/AuthPage/AuthPage";
 import Footer from "../../components/Footer/Footer";
 import { Routes, Route, Navigate } from "react-router-dom";
 import JewelleryPage from "../JewelleryPage/JewelleryPage";
-
+import CategoryPage from "../CategoryPage/CategoryPage";
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -19,6 +19,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/login" element={<AuthPage setUser={setUser} />}></Route>
+          <Route path="/jewellery/:categoryName" element={<CategoryPage />} ></Route>
           <Route path="/jewellery" element={<JewelleryPage />}></Route>
           <Route path="/*" element={<Navigate to="/" />}></Route>
         </Routes>
