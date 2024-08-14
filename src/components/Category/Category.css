@@ -13,5 +13,14 @@
  }
 
 .category-title {
-  margin: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-title-smaller{
+  text-align: center;
+}
+
+.card-body-title{
+  padding-left: 0;
 }

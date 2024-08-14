@@ -12,8 +12,8 @@ export default function Category(){
                 className="card-img-top category-img"
                 alt="new"
               ></img>
-              <div className="card-body">
-                <h5 className="card-title">New Release</h5>
+              <div className="card-body card-body-title">
+                <h5 className="card-title category-title-smaller">New Release</h5>
               </div>
             </Link>
           </div>
@@ -23,11 +23,11 @@ export default function Category(){
             <Link className="nav-link category-link " to="/jewellery/bracelets">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png"
-                class="card-img-top category-img"
+                className="card-img-top category-img"
                 alt="bracelet"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Bracelets</h5>
+              <div className="card-body card-body-title">
+                <h5 className="card-title category-title-smaller">Bracelets</h5>
               </div>
             </Link>
           </div>
@@ -37,11 +37,11 @@ export default function Category(){
             <Link className="nav-link category-link " to="/jewellery/earrings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/earrings/Curly+C+2.png"
-                class="card-img-top category-img"
+                className="card-img-top category-img"
                 alt="earing"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Earrings</h5>
+              <div className="card-body card-body-title">
+                <h5 className="card-title category-title-smaller">Earrings</h5>
               </div>
             </Link>
           </div>
@@ -51,11 +51,11 @@ export default function Category(){
             <Link className="nav-link category-link " to="/jewellery/necklaces">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg"
-                class="card-img-top category-img"
+                className="card-img-top category-img"
                 alt="necklace"
               ></img>
-              <div className="card-body">
-                <h5 className="card-title">Necklaces</h5>
+              <div className="card-body card-body-title">
+                <h5 className="card-title category-title-smaller">Necklaces</h5>
               </div>
             </Link>
           </div>
@@ -65,11 +65,11 @@ export default function Category(){
             <Link className="nav-link category-link " to="/jewellery/rings">
               <img
                 src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/miss+u+2.jpg"
-                class="card-img-top category-img"
+                className="card-img-top category-img"
                 alt="ring"
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Rings</h5>
+              <div className="card-body card-body-title">
+                <h5 className="card-title category-title-smaller">Rings</h5>
               </div>
             </Link>
           </div>

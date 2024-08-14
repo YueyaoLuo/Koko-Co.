@@ -71,8 +71,8 @@ export default function GiftSeason(){
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h3 className="card-title">Perfect Spring Gifts</h3>
-              <p className="card-text">
+              <h3 className="card-title carousel-text">Perfect Spring Gifts</h3>
+              <p className="card-text carousel-text">
                 Embrace the freshness of spring with our stunning jewelry
                 collection, designed to celebrate the season of renewal and
                 growth. Each piece captures the vibrant colors and delicate beauty
