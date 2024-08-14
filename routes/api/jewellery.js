@@ -7,6 +7,7 @@ router.get('/jewellery/:categoryName', (req, res) => {
     res.send(`Category Name: ${req.params.categoryName}`);
 });
 
+router.get('/:categoryName/:jewelleryId', jewelleryCtrl.getJewelleryById)
 router.get('/:categoryName', jewelleryCtrl.getJewelleryByCategory)
 router.get('/', jewelleryCtrl.index);
 module.exports = router;
