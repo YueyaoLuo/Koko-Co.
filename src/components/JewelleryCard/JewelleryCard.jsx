@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./JewelleryCard.css"
+// import "./JewelleryCard.css"
 
 export default function JewelleryCard({ item, categoryName }) {
   
@@ -13,12 +13,12 @@ export default function JewelleryCard({ item, categoryName }) {
                 alt="pic"
               ></img>
               </Link>
-        <button className="btn-price card-body" type="submit">
+        <div className="btn-price card-body">
           <p className="card-title product-card-text">
             <strong>{item.name}</strong>
           </p>
           <p className="card-text product-card-text">${item.price}</p>
-        </button>
+        </div>
       </div>
     </div>
   );

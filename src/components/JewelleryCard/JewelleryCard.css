@@ -13,13 +13,13 @@
   background-color: #B8907A;
   color: transparent;
   border-radius: 0;
-}
+} 
 
-.btn-price::after {
+ .btn-price::after {
   position: absolute;
   top: 50%;
   left:50%;
-  transform: translate(-50%, -50%); /*center the text*/
+  transform: translate(-50%, -50%); 
   content: "Add to Bag";
   color: black;
   opacity: 0;
