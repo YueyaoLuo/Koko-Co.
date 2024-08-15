@@ -1,0 +1,47 @@
+export default function LineItem({ cart, handleChangeQty }) {
+  return (
+    <>
+      {cart?.items.length > 0 ? (
+        cart.items.map((item) => (
+          <div key={item._id} className="d-flex align-items-stretch mb-3">
+            <img
+              src={item.jewellery.imageUrls[0]}
+              alt={item.jewellery.name}
+              style={{ width: "100px" }}
+            />
+            <div className="d-flex-col">
+              <div className="bag-text">{item.jewellery.name}</div>
+              <div className="bag-text">
+                <small>${item.jewellery.price}</small>
+              </div>
+              {/* qty */}
+              <div className="qty">
+                <button
+                  className="btn-light bag-btn"
+                  onClick={() =>
+                    handleChangeQty(item.jewellery._id, item.qty - 1)
+                  }
+                >
+                  −
+                </button>
+
+                <span className="btn qty-text btn-light">{item.qty}</span>
+
+                <button
+                  className="btn-light bag-btn"
+                  onClick={() =>
+                    handleChangeQty(item.jewellery._id, item.qty + 1)
+                  }
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p>Your shopping bag is empty.</p>
+      )}
+    </>
+  );
+}

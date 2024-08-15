@@ -1,0 +1,60 @@
+.shopping-bag {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .shopping-bag.visible {
+    right: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .bag-text{
+    padding-left: 2vmin;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+.qty{
+    background-color: #F8F9FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vmin;
+    
+}
+
+  .qty-text{
+    padding: 1px 6px;
+    border: none;
+    border-radius: 0;
+    line-height: inherit;
+  }
+
+  .bag-btn{
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .d-flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

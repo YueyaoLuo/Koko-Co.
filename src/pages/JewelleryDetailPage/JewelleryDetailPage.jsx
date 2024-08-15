@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as jewelleryAPI from "../../utilities/jewellery-api";
 import "./JewelleryDetailPage.css";
-export default function JewelleryDetailPage() {
+export default function JewelleryDetailPage({ handleAddToOrder }) {
   const { categoryName, jewelleryId } = useParams();
   //   console.log({categoryName, jewelleryId})
   const [oneJewellery, setOneJewellery] = useState(null);
@@ -82,6 +82,10 @@ export default function JewelleryDetailPage() {
                 <button
                   className="btn btn-primary btn-add-to-bag"
                   type="submit"
+                  onClick={() => handleAddToOrder(oneJewellery._id)}
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#shoppingBagOffcanvas"
+                  aria-controls="shoppingBagOffcanvas"
                 >
                   <span className="left-text">AU${oneJewellery.price}</span>
                   <span className="right-text">Add to Bag</span>
