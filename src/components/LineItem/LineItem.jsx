@@ -1,9 +1,10 @@
-export default function LineItem({ cart, handleChangeQty }) {
+export default function LineItem({ order, handleChangeQty }) {
+    
   return (
     <>
-      {cart?.items.length > 0 ? (
-        cart.items.map((item) => (
-          <div key={item._id} className="d-flex align-items-stretch mb-3">
+      {order?.items.length > 0 ? (
+        order.items.map((item) => (
+          <div key={item._id} className="d-flex d-flex-bag align-items-stretch mb-3">
             <img
               src={item.jewellery.imageUrls[0]}
               alt={item.jewellery.name}

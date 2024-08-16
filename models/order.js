@@ -10,6 +10,10 @@ const itemSchema = new Schema({
     toJSON: { virtuals: true }
 })
 
+itemSchema.virtual('extPrice').get(function() {
+    // 'this' keyword is bound to the lineItem document
+    return this.qty * this.jewellery.price;
+  });
 
 const orderSchema = new Schema({
     user: {
@@ -25,11 +29,20 @@ const orderSchema = new Schema({
 });
 
 
-
+orderSchema.virtual('orderTotal').get(function() {
+    return this.items.reduce((total, item) => total + item.extPrice, 0);
+  });
+  
+  orderSchema.virtual('orderQty').get(function() {
+    return this.items.reduce((total, item) => total + item.qty, 0);
+  });
 
 orderSchema.virtual('orderId').get(function () {
     return this.id.slice(-6).toUpperCase();
 });
+
+
+
 
 orderSchema.statics.getCart = function (userId) {
     return this.findOneAndUpdate(

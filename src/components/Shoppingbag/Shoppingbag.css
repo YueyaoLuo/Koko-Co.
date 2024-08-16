@@ -1,60 +1,101 @@
 .shopping-bag {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
-    overflow-y: auto;
-  }
-  
-  .shopping-bag.visible {
-    right: 0;
-  }
-  
-  .close-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  .bag-text{
-    padding-left: 2vmin;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-.qty{
-    background-color: #F8F9FC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2vmin;
-    
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-  .qty-text{
-    padding: 1px 6px;
-    border: none;
-    border-radius: 0;
-    line-height: inherit;
-  }
+.shopping-bag.visible {
+  right: 0;
+}
 
-  .bag-btn{
-    border: none;
-    border-radius: 0;
-    padding: 0;
-  }
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+}
 
-  .d-flex-col{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.bag-text {
+  padding-left: 2vmin;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.qty {
+  background-color: #f8f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vmin;
+}
+
+.qty-text {
+  padding: 1px 6px;
+  border: none;
+  border-radius: 0;
+  line-height: inherit;
+}
+
+.bag-btn {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subtotal-text {
+  background-color: #bfb688;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+}
+
+.subtotal-text > p {
+  margin: 5px 0;
+}
+
+.offcanvas-body {
+  padding: 0;
+}
+
+.d-flex-bag {
+  margin: 1rem;
+}
+
+.offcanvas-header {
+  background-color: #bfb688;
+  border: 0;
+}
+
+.orderqty {
+  background-color: #f8f9fc;
+  border-radius: 50%;
+}
+
+.btn-checkout {
+  margin: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+  border-radius: 0;
+}

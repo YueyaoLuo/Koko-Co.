@@ -9,7 +9,6 @@ import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import JewelleryPage from "../JewelleryPage/JewelleryPage";
 import CategoryPage from "../CategoryPage/CategoryPage";
 import JewelleryDetailPage from "../JewelleryDetailPage/JewelleryDetailPage";
-import ShoppingbagPage from "../ShoppingbagPage/ShoppingbagPage";
 import Shoppingbag from "../../components/Shoppingbag/Shoppingbag";
 import * as ordersAPI from "../../utilities/orders-api";
 export default function App() {
@@ -62,16 +61,12 @@ export default function App() {
             element={<CategoryPage />}
           ></Route>
           <Route path="/jewellery" element={<JewelleryPage />}></Route>
-          <Route
-            path="/orders/shoppingbag"
-            element={<ShoppingbagPage />}
-          ></Route>
           <Route path="/*" element={<Navigate to="/" />}></Route>
         </Routes>
       </div>
       <Shoppingbag
         user={user}
-        cart={cart}
+        order={cart}
         isVisible={isBagVisible}
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
