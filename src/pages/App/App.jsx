@@ -11,9 +11,8 @@ import CategoryPage from "../CategoryPage/CategoryPage";
 import JewelleryDetailPage from "../JewelleryDetailPage/JewelleryDetailPage";
 import Shoppingbag from "../../components/Shoppingbag/Shoppingbag";
 import * as ordersAPI from "../../utilities/orders-api";
-import { loadStripe } from '@stripe/stripe-js';
 import CheckoutPage from "../CheckoutPage/CheckoutPage";
-const stripePromise = loadStripe('pk_test_51PoGp601fP1DApNTNDL9rrm4k6jMZCjlrRVbKsC2DKFeGqTBsSpG0wIp90O696kHx65GPDiJqzq2H2cFpRDe2Zlf00vujPVw0b');
+
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [cart, setCart] = useState(null);
@@ -43,7 +42,7 @@ export default function App() {
 
   async function handleCheckout() {
     await navigate("/orders/shoppingbag/checkout");
-    setIsBagVisible(false)
+    setIsBagVisible(false);
   }
   return (
     <main className="App">
@@ -64,7 +63,7 @@ export default function App() {
             element={<CategoryPage />}
           ></Route>
           <Route path="/jewellery" element={<JewelleryPage />}></Route>
-          <Route path="/orders/shoppingbag/checkout" element={<CheckoutPage order={cart}/>} />
+          <Route path="/orders/shoppingbag/checkout" element={<CheckoutPage order={cart} setCart={setCart} setIsBagVisible={setIsBagVisible}/>} />
           <Route path="/*" element={<Navigate to="/" />}></Route>
         </Routes>
       </div>

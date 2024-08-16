@@ -23,7 +23,7 @@ const CARD_OPTIONS = {
 };
 
 
-export default function PaymentForm({order}) {
+export default function PaymentForm({order, setCart, setIsBagVisible}) {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -39,13 +39,16 @@ export default function PaymentForm({order}) {
       try {
         
         const { id } = paymentMethod;
-        console.log(order.orderTotal)
+        // console.log(order.orderTotal)
         const amount = order.orderTotal;
+        
         const response = await ordersAPI.payment(amount,id)
-        console.log(response)
+        // console.log(response)
         if (response.success) {
           console.log("Successful payment");
           setSuccess(true);
+          setIsBagVisible(false);
+          setCart(null);
         }
       } catch (error) {
         console.log("Error", error);

@@ -6,14 +6,14 @@ import PaymentForm from "../../components/PaymentForm/PaymentForm";
 // Publishable key
 const stripePromise = loadStripe('pk_test_51PoGp601fP1DApNTNDL9rrm4k6jMZCjlrRVbKsC2DKFeGqTBsSpG0wIp90O696kHx65GPDiJqzq2H2cFpRDe2Zlf00vujPVw0b');
 
-export default function CheckoutPage({order}){
+export default function CheckoutPage({order, setCart, setIsBagVisible}){
 
 
 
   return (
 		<Elements stripe={stripePromise}>
       {/* delivery form */}
-			<PaymentForm order={order}/>
+			<PaymentForm order={order} setCart={setCart} setIsBagVisible={setIsBagVisible}/>
 		</Elements>
 	)
 }
