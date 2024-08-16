@@ -40,7 +40,7 @@ async function payment(req, res) {
             description: "Koko&co",
             payment_method: id,
             confirm: true,
-            return_url: "http://localhost:3000/orders/shoppingbag/checkout"
+            return_url: "https://kokoandco.onrender.com/orders/shoppingbag/checkout"
         })
         console.log("Payment", payment)
         res.json({
