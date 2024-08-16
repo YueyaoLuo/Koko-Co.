@@ -39,11 +39,11 @@ export default function PaymentForm({order, setCart, setIsBagVisible}) {
       try {
         
         const { id } = paymentMethod;
-        // console.log(order.orderTotal)
+        console.log("order amount is: ", order.orderTotal)
         const amount = order.orderTotal;
         
         const response = await ordersAPI.payment(amount,id)
-        // console.log(response)
+        console.log("response is: ", response)
         if (response.success) {
           console.log("Successful payment");
           setSuccess(true);
