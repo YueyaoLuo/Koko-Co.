@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, setIsBagVisible }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -73,7 +73,7 @@ export default function NavBar({ user, setUser }) {
             <Link className="nav-link" to="/wishlist">
               <ion-icon name="heart-outline"></ion-icon>
             </Link>
-            <Link className="nav-link" to="/shoppingcart">
+            <Link className="nav-link" onClick={() => setIsBagVisible(true)}>
               <ion-icon name="cart-outline">shop</ion-icon>
             </Link>
 

@@ -20,7 +20,7 @@ export default function App() {
     async function getCart() {
       const cart = await ordersAPI.getCart();
       setCart(cart);
-      setIsBagVisible(true);
+      
     }
     getCart();
   }, []);
@@ -44,7 +44,7 @@ export default function App() {
   }
   return (
     <main className="App">
-      <NavBar user={user} setUser={setUser} />
+      <NavBar user={user} setUser={setUser} setIsBagVisible={setIsBagVisible} />
       {/* to make sure other components all displayed below navbar */}
       <div style={{ marginTop: "60px", marginBottom: "20px" }}>
         <Routes>

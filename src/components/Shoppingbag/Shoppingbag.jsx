@@ -10,7 +10,6 @@ export default function Shoppingbag({
   handleChangeQty,
   handleCheckout,
 }) {
-  //   console.log(order)
   return (
     <div
       className={`offcanvas offcanvas-end ${isVisible ? "show" : ""}`}
