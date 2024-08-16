@@ -41,7 +41,7 @@ export default function LineItem({ order, handleChangeQty }) {
           </div>
         ))
       ) : (
-        <p>Your shopping bag is empty.</p>
+        <p></p>
       )}
     </>
   );

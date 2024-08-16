@@ -75,8 +75,8 @@ export default function JewelleryDetailPage({ handleAddToOrder }) {
                   <strong>Material</strong>
                 </p>
                 <ul className="card-text">
-                  {oneJewellery.materials.map((material) => (
-                    <li>{material}</li>
+                  {oneJewellery.materials.map((material,idx) => (
+                    <li key={idx}>{material}</li>
                   ))}
                 </ul>
                 <button

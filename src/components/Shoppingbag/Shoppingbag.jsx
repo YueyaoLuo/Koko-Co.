@@ -6,10 +6,11 @@ export default function Shoppingbag({
   user,
   order,
   isVisible,
+  setIsBagVisible,
   handleChangeQty,
   handleCheckout,
 }) {
-  // console.log(order)
+  //   console.log(order)
   return (
     <div
       className={`offcanvas offcanvas-end ${isVisible ? "show" : ""}`}
@@ -25,7 +26,7 @@ export default function Shoppingbag({
           className="btn-close"
           aria-label="Close"
           data-bs-dismiss="offcanvas"
-          onClick={() => isVisible(false)}
+          onClick={() => setIsBagVisible(false)}
         ></button>
       </div>
       <div className="offcanvas-body">
@@ -33,15 +34,24 @@ export default function Shoppingbag({
         {user ? (
           <>
             <LineItem order={order} handleChangeQty={handleChangeQty} />
-            <div className="subtotal-text">
-              <p className="">SUBTOTAL</p>
-              <p className="">AU${order.orderTotal.toFixed(2)}</p>
-            </div>
-            <div className="btn-checkout">
-              <button className="btn btn-primary btn-block" onClick={handleCheckout}>
-                CHECKOUT
-              </button>
-            </div>
+            {order?.items.length > 0 ? (
+              <>
+                <div className="subtotal-text">
+                  <p className="">SUBTOTAL</p>
+                  <p className="">AU${order.orderTotal.toFixed(2)}</p>
+                </div>
+                <div className="btn-checkout">
+                  <button
+                    className="btn btn-primary btn-block"
+                    onClick={handleCheckout}
+                  >
+                    CHECKOUT
+                  </button>
+                </div>
+              </>
+            ) : (
+              <p className="empty-bag-text">Your shopping bag is empty.</p>
+            )}
           </>
         ) : (
           <Link

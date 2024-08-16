@@ -40,7 +40,7 @@ export default function App() {
 
   async function handleCheckout() {
     await ordersAPI.checkout();
-    navigate("/orders");
+    navigate("/orders/shoppingbag/checkout");
   }
   return (
     <main className="App">
@@ -68,6 +68,7 @@ export default function App() {
         user={user}
         order={cart}
         isVisible={isBagVisible}
+        setIsBagVisible={setIsBagVisible}
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
       />
