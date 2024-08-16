@@ -1,0 +1,17 @@
+
+
+.payment-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.form-control{
+
+    margin-bottom: 2rem;
+}
+
+.btn-primary{
+    text-align: center;
+}

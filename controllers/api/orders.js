@@ -1,9 +1,10 @@
 const Order = require('../../models/order')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 module.exports = {
     cart,
     addToCart,
     setProductQtyInCart,
-    checkout,
+    payment,
 };
 
 // A cart is the unpaid order for a user
@@ -28,9 +29,29 @@ async function setProductQtyInCart(req, res) {
 }
 
 // Update the cart's isPaid property to true
-async function checkout(req, res) {
-    const cart = await Order.getCart(req.user._id);
-    cart.isPaid = true;
-    await cart.save();
-    res.json(cart);
+async function payment(req, res) {
+    // console.log("req.body is", req.body)
+    let {amount, id} = req.body
+    // console.log("id is:", {id})
+    try {
+        const payment = await stripe.paymentIntents.create({
+            amount,
+            currency: "aud",
+            description: "Koko&co",
+            payment_method: id,
+            confirm: true,
+            return_url: "http://localhost:3000/orders/shoppingbag/checkout"
+        })
+        console.log("Payment", payment)
+        res.json({
+            message: "Payment successful",
+            success: true
+        })
+    } catch (error) {
+        console.log("Error", error)
+        res.json({
+            message: "Payment failed",
+            success: false
+        })
+    }
 }
