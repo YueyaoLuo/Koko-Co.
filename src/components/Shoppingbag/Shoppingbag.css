@@ -37,6 +37,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 2vmin;
+  gap: 5px;
 }
 
 .qty-text {
@@ -49,7 +50,7 @@
 .bag-btn {
   border: none;
   border-radius: 0;
-  padding: 0;
+  padding: 5px 10px;
 }
 
 .d-flex-col {

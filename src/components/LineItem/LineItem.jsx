@@ -26,7 +26,7 @@ export default function LineItem({ order, handleChangeQty }) {
                   −
                 </button>
 
-                <span className="btn qty-text btn-light">{item.qty}</span>
+                <div className="btn qty-text btn-light">{item.qty}</div>
 
                 <button
                   className="btn-light bag-btn"
