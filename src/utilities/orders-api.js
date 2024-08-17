@@ -24,3 +24,8 @@ export function payment(amount, id) {
   // Changing data on the server, so make it a POST request
   return sendRequest(`${BASE_URL}/shoppingbag/payment`, 'POST', {amount, id});
 }
+
+//remove an item to the shoppingbag
+export function removeItemFromCart(itemId) {
+  return sendRequest(`${BASE_URL}/shoppingbag/items/remove/${itemId}`, 'DELETE');
+}

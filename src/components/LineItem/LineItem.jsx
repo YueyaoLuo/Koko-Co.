@@ -1,4 +1,4 @@
-export default function LineItem({ order, handleChangeQty }) {
+export default function LineItem({ order, handleChangeQty, handleRemoveItem }) {
     
   return (
     <>
@@ -38,6 +38,7 @@ export default function LineItem({ order, handleChangeQty }) {
                 </button>
               </div>
             </div>
+            <button className="align-items-center btn btn-light btn-delete" onClick={()=> handleRemoveItem(item.jewellery._id)}><ion-icon name="trash-outline"></ion-icon></button>
           </div>
         ))
       ) : (

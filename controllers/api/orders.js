@@ -5,6 +5,7 @@ module.exports = {
     addToCart,
     setProductQtyInCart,
     payment,
+    revemoCartItem,
 };
 
 // A cart is the unpaid order for a user
@@ -54,4 +55,11 @@ async function payment(req, res) {
             success: false
         })
     }
+}
+
+
+async function revemoCartItem(req, res) {
+    const cart = await Order.getCart(req.user._id);
+    await cart.removeProductFromCart(req.params.id);
+    res.json(cart);
 }

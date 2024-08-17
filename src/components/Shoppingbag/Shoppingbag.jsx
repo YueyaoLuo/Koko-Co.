@@ -9,6 +9,7 @@ export default function Shoppingbag({
   setIsBagVisible,
   handleChangeQty,
   handleCheckout,
+  handleRemoveItem,
 }) {
   return (
     <div
@@ -32,7 +33,7 @@ export default function Shoppingbag({
         {/* check if user loggin in */}
         {user ? (
           <>
-            <LineItem order={order} handleChangeQty={handleChangeQty} />
+            <LineItem order={order} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
             {order?.items.length > 0 ? (
               <>
                 <div className="subtotal-text">

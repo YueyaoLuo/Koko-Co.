@@ -9,5 +9,5 @@ router.post('/shoppingbag/items/:id', ensureLoggedIn, ordersCtrl.addToCart);
 router.post('/shoppingbag/payment', ensureLoggedIn, ordersCtrl.payment);
 // POST /api/orders/shoppingbag/qty
 router.put('/shoppingbag/qty', ensureLoggedIn, ordersCtrl.setProductQtyInCart);
-
+router.delete('/shoppingbag/items/remove/:id', ensureLoggedIn, ordersCtrl.revemoCartItem)
 module.exports = router;

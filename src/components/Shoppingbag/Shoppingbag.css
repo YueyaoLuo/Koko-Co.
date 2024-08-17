@@ -104,3 +104,12 @@
 .empty-bag-text{
     text-align: center;
 }
+
+.btn-delete{
+  background-color: transparent;
+  border: none;
+}
+
+.btn-delete:hover{
+  background-color: transparent;
+}

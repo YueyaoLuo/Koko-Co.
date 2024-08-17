@@ -44,6 +44,11 @@ export default function App() {
     await navigate("/orders/shoppingbag/checkout");
     setIsBagVisible(false);
   }
+
+  async function handleRemoveItem(itemId) {
+    const updatedCart = await ordersAPI.removeItemFromCart(itemId);
+    setCart(updatedCart);
+  }
   return (
     <main className="App">
       <NavBar user={user} setUser={setUser} setIsBagVisible={setIsBagVisible} />
@@ -74,6 +79,7 @@ export default function App() {
         setIsBagVisible={setIsBagVisible}
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
+        handleRemoveItem={handleRemoveItem}
       />
       <Footer />
     </main>

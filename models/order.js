@@ -93,4 +93,21 @@ orderSchema.methods.setProductQty = function (jewelleryId, newQty) {
     return cart.save();
 };
 
+// Instance method for removing an item to a cart (unpaid order)
+orderSchema.methods.removeProductFromCart = async function (jewelleryId) {
+    // 'this' keyword is bound to the cart (order doc)
+    const cart = this;
+    // Check if the item already exists in the cart
+    const itemIndex = cart.items.findIndex(item => item.jewellery._id.equals(jewelleryId));
+    if (itemIndex !== -1) {
+        // It already exists, so increase the qty
+        cart.items.splice(itemIndex, 1);
+    } else {
+        return console.log({ success: false, message: 'Item not found' });
+    }
+    // return the save() method's promise
+    return cart.save();
+};
+
+
 module.exports = mongoose.model('Order', orderSchema);
