@@ -12,6 +12,7 @@ import JewelleryDetailPage from "../JewelleryDetailPage/JewelleryDetailPage";
 import Shoppingbag from "../../components/Shoppingbag/Shoppingbag";
 import * as ordersAPI from "../../utilities/orders-api";
 import CheckoutPage from "../CheckoutPage/CheckoutPage";
+import Account from "./AccountPage/Account";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -56,7 +57,8 @@ export default function App() {
       <div style={{ marginTop: "60px", marginBottom: "20px" }}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/login" element={<AuthPage setUser={setUser} />}></Route>
+          <Route path="/users" element={<Account user={user}/>}></Route>
+          <Route path="/users/login" element={<AuthPage setUser={setUser} />}></Route>
           <Route
             path="/jewellery/:categoryName/:jewelleryId"
             element={
