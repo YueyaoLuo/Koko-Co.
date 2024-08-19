@@ -13,6 +13,7 @@ async function create(req, res) {
   try {
     // Add the user to the database
     const user = await User.create(req.body);
+    // console.log(user)
     // token will be a string
     const token = createJWT(user);
     // Yes, we can use res.json to send back just a string
@@ -21,13 +22,14 @@ async function create(req, res) {
   } catch (err) {
     // Client will check for non-2xx status code 
     // 400 = Bad Request
+    console.error('Error creating user:', err);
     res.status(400).json(err);
   }
 }
 
 async function login(req, res) {
   try {
-    console.log('Login request received with:', req.body);
+    // console.log('Login request received with:', req.body);
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ message: 'Missing email or password' });

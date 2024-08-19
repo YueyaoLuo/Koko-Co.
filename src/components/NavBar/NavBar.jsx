@@ -95,14 +95,14 @@ export default function NavBar({ user, setUser, setIsBagVisible }) {
                   aria-labelledby="navbarScrollingDropdown"
                 >
                   <li>
-                    <Link className="dropdown-item" to="/account">
+                    <Link className="dropdown-item" to="/users">
                       My Account
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="dropdown-item"
-                      to="/login"
+                      to="/users/login"
                       onClick={handleLogOut}
                     >
                       Log Out
@@ -111,7 +111,7 @@ export default function NavBar({ user, setUser, setIsBagVisible }) {
                 </ul>
               </li>
             ) : (
-              <Link className="nav-link" to="/login">
+              <Link className="nav-link" to="/users/login">
                 <ion-icon name="person-outline"></ion-icon>
               </Link>
             )}

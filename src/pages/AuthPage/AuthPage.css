@@ -12,3 +12,10 @@
     width: 100%;
 }
 
+.Auth-text:hover{
+    cursor: pointer;
+}
+
+.btn-auth:hover{
+    cursor: pointer;
+}

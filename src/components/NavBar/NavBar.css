@@ -52,6 +52,6 @@ button.btn-search {
   margin: 0;
 }
 
-.form-container-login {
-  border-right: 0.1vmin solid var(--tan-3);
+.Auth-text{
+  text-decoration: underline;
 }

@@ -1,19 +1,25 @@
+import { useState } from "react";
 import LoginForm from "../../components/LoginForn/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import "./AuthPage.css";
 export default function AuthPage({ setUser }) {
+  const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="container">
       <div className="row">
         <div className="col form-container form-container-login">
-            <h5>Log In</h5>
-          <LoginForm setUser={setUser} />
-        </div>
-        
+          <p></p>
+          <h3 onClick={() => setShowLogin(!showLogin)} className="Auth-text">
+            {showLogin
+              ? "Don't have an account? Sign Up"
+              : "Exisitng Customer? Log In"}
+          </h3>
 
-        <div className="col">
-            <h5>Sign Up</h5>
-          <SignUpForm setUser={setUser} />
+          {showLogin ? (
+            <LoginForm setUser={setUser} />
+          ) : (
+            <SignUpForm setUser={setUser} />
+          )}
         </div>
       </div>
     </div>
