@@ -5,7 +5,7 @@ import "./AuthPage.css";
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
   return (
-    <div className="container">
+    <div className="container container-auth">
       <div className="row">
         <div className="col form-container form-container-login">
           <p></p>

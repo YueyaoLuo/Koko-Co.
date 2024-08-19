@@ -57,7 +57,7 @@ export default function Shoppingbag({
           <Link
             className="btn btn-primary"
             data-bs-dismiss="offcanvas"
-            to="/login"
+            to="/users/login"
           >
             Log In
           </Link>

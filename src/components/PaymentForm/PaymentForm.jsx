@@ -61,11 +61,16 @@ export default function PaymentForm({order, setCart, setIsBagVisible}) {
   return (
     <div className="container payment-container mt-5">
       {!success ? (
+        <div className="row justify-content-center">
         <div className="col-md-8">
-          <h3 className="text-center mb-4">Payment Information</h3>
+        <div className="card">
+        <div className="card-header">
+          <h5 className="card-title mb-0">Payment Information</h5>
+          </div>
+          <div className="card-body">
           <form
             onSubmit={handleSubmit}
-            className="p-4 border rounded bg-light payment-container"
+            className="p-4 payment-container"
           >
             <fieldset className="form-control">
               <div className="filedset">
@@ -74,6 +79,9 @@ export default function PaymentForm({order, setCart, setIsBagVisible}) {
             </fieldset>
             <button className="btn btn-primary btn-block">Pay</button>
           </form>
+          </div>
+          </div>
+        </div>
         </div>
       ) : (
         <div className="text-center">
