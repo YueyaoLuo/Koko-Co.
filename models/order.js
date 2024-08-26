@@ -15,6 +15,18 @@ itemSchema.virtual('extPrice').get(function() {
     return this.qty * this.jewellery.price;
   });
 
+  const deliveryAddressSchema = new Schema({
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    phone: { type: Number, required: true },
+    street: { type: String, required: true },
+    suburb: { type: String, required: true },
+    state: { type: String, required: true },
+    postcode: { type: Number, required: true },
+}, {
+    _id: false // Prevents Mongoose from creating a separate _id for this subdocument
+  });
+
 const orderSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -22,7 +34,8 @@ const orderSchema = new Schema({
         required: true
     },
     items: [itemSchema],
-    isPaid: { type: Boolean, default: false }
+    isPaid: { type: Boolean, default: false },
+    deliveryAddress: deliveryAddressSchema,  
 }, {
     timestamps: true,
     toJSON: { virtuals: true }

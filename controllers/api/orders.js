@@ -6,6 +6,7 @@ module.exports = {
     setProductQtyInCart,
     payment,
     revemoCartItem,
+    create,
 };
 
 // A cart is the unpaid order for a user
@@ -62,4 +63,13 @@ async function revemoCartItem(req, res) {
     const cart = await Order.getCart(req.user._id);
     await cart.removeProductFromCart(req.params.id);
     res.json(cart);
+}
+
+async function create(req, res) {
+    const newOrder = req.body
+    console.log(newOrder)
+    res.json({
+        message: "Save delivery address successful",
+        success: true
+    })
 }

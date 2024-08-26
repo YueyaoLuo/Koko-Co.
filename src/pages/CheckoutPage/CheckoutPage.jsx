@@ -1,29 +1,53 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
-
+import * as ordersAPI from "../../utilities/orders-api";
 // Publishable key
 const stripePromise = loadStripe(
   "pk_test_51PoGp601fP1DApNTNDL9rrm4k6jMZCjlrRVbKsC2DKFeGqTBsSpG0wIp90O696kHx65GPDiJqzq2H2cFpRDe2Zlf00vujPVw0b"
 );
 
 export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
-  // const [isLoading, setIsLoading] = useState(true);
-  // useEffect(() => {
-  //   if (order !== null) {
-  //     setIsLoading(false);
-  //   }
-  // }, [order]);
+  const userId = order.user;
+  // console.log(userId);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState(null);
+  const [street, setStreet] = useState("");
+  const [suburb, setSuburb] = useState("");
+  const [state, setState] = useState("");
+  const [postcode, setPostcode] = useState(null);
+  const [createSuccess, setCreateSuccess] = useState(false);
+  async function createOrder(evt) {
+    evt.preventDefault();
+    try {
+      const newOrder = {
+        user: userId,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        street: street,
+        suburb: suburb,
+        state: state,
+        postcode: postcode,
+        items: order.items,
+        isPaid: false,
+      };
+      const response = await ordersAPI.createDeliveryDetail(newOrder);
+      console.log("Order created successfully:", response);
+      if (response.success) {
+        console.log("Successful save delivery details");
+        setCreateSuccess(true);
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+    }
+  }
 
   return (
     <div className="checkout-form">
-      {/* {isLoading ? ( */}
-      {/* <div className="spinner-border text-dark justify-content-center" role="status">
-          <span className="visually-hidden justify-content-center">Loading...</span>
-        </div> */}
-      {/* ) : ( */}
-
+      {/* order details */}
       <div className="container mt-4">
         <div className="row justify-content-center">
           <div className="col-md-8">
@@ -61,60 +85,111 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
           </div>
         </div>
       </div>
-      {/* )} */}
-      {/* delivery address form to be added*/}
-      <div className="container mt-4">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
-            <div className="card">
-              <div className="card-header">
-                <h5 className="card-title mb-0">Delivery Address</h5>
-              </div>
-              <div className="card-body">
-                <form className="form-group">
-                <div className="row mb-2">
-                  <label>First Name:</label>
-                  <input type="text" name="first name" className="form-control" required></input>
+      {/* delivery details */}
+      {!createSuccess ? (
+        <div className="container mt-4">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="card">
+                <div className="card-header">
+                  <h5 className="card-title mb-0">Delivery Address</h5>
                 </div>
-                <div className="row mb-2">
-                  <label>Last Name:</label>
-                  <input type="text" name="last name" className="form-control" required></input>
+                <div className="card-body">
+                  <form
+                    className="form-address"
+                    autoComplete="off"
+                    onSubmit={createOrder}
+                  >
+                    <div className="row mb-1">
+                      <label>First Name:</label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        className="form-control"
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>Last Name:</label>
+                      <input
+                        type="text"
+                        name="lastName"
+                        className="form-control"
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>Phone number:</label>
+                      <input
+                        type="number"
+                        name="phone"
+                        className="form-control"
+                        onChange={(e) => setPhone(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>Street Address:</label>
+                      <input
+                        type="text"
+                        name="street"
+                        className="form-control"
+                        onChange={(e) => setStreet(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>Suburb:</label>
+                      <input
+                        type="text"
+                        name="suburb"
+                        className="form-control"
+                        onChange={(e) => setSuburb(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>State:</label>
+                      <input
+                        type="text"
+                        name="state"
+                        className="form-control"
+                        onChange={(e) => setState(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <div className="row mb-1">
+                      <label>Postcode:</label>
+                      <input
+                        type="number"
+                        name="postcode"
+                        className="form-control"
+                        onChange={(e) => setPostcode(e.target.value)}
+                        required
+                      ></input>
+                    </div>
+                    <button className="btn btn-primary">
+                      Save your delivery details
+                    </button>
+                  </form>
                 </div>
-                <div className="row mb-2">
-                  <label>Phone number:</label>
-                  <input type="text" name="phone number" className="form-control" required></input>
-                </div>
-                <div className="row mb-2">
-                  <label>Street Address:</label>
-                  <input type="text" name="street address" className="form-control" required></input>
-                </div>
-                <div className="row mb-2">
-                  <label>Suburb:</label>
-                  <input type="text" name="suburb" className="form-control" required></input>
-                </div>
-                <div className="row mb-2">
-                  <label>State:</label>
-                  <input type="text" name="state" className="form-control" required></input>
-                </div>
-                <div className="row mb-2">
-                  <label>Postcode:</label>
-                  <input type="text" name="postcode" className="form-control" required></input>
-                </div>
-                <button className="btn btn-primary">Save your details</button>
-                </form>
               </div>
             </div>
           </div>
         </div>
-        {/* stripe element to collect card details securely */}
-        <Elements stripe={stripePromise}>
-          <PaymentForm
-            order={order}
-            setCart={setCart}
-            setIsBagVisible={setIsBagVisible}
-          />
-        </Elements>
-      </div>
+      ) : (
+        <div className="container mt-4">
+          <Elements stripe={stripePromise}>
+            <PaymentForm
+              order={order}
+              setCart={setCart}
+              setIsBagVisible={setIsBagVisible}
+            />
+          </Elements>
+        </div>
+      )}
     </div>
   );
 }

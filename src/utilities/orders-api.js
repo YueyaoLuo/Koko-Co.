@@ -29,3 +29,8 @@ export function payment(amount, id) {
 export function removeItemFromCart(itemId) {
   return sendRequest(`${BASE_URL}/shoppingbag/items/remove/${itemId}`, 'DELETE');
 }
+
+//create delivery details
+export function createDeliveryDetail(newOrder) {
+  return sendRequest(`${BASE_URL}/shoppingbag/checkout`, 'POST', {newOrder});
+}
