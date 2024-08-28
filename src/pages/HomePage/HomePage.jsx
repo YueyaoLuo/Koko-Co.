@@ -2,7 +2,7 @@ import "./HomePage.css";
 import Banner from "../../components/Banner/Banner";
 import Category from "../../components/Category/Category";
 import Carousel from "../../components/Carousel/Carousel";
-
+import Footer from "../../components/Footer/Footer";
 export default function HomePage() {
   return (
     <>
@@ -20,6 +20,9 @@ export default function HomePage() {
 
       {/* gift season */}
       <Carousel />
+
+      {/* footer */}
+      <Footer />
     </>
   );
 }

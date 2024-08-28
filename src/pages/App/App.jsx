@@ -4,7 +4,6 @@ import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../../pages/HomePage/HomePage";
 import AuthPage from "../../pages/AuthPage/AuthPage";
-import Footer from "../../components/Footer/Footer";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import JewelleryPage from "../JewelleryPage/JewelleryPage";
 import CategoryPage from "../CategoryPage/CategoryPage";
@@ -54,7 +53,7 @@ export default function App() {
     <main className="App">
       <NavBar user={user} setUser={setUser} setIsBagVisible={setIsBagVisible} />
       {/* to make sure other components all displayed below navbar */}
-      <div style={{ marginTop: "60px", marginBottom: "20px" }}>
+      <div style={{ marginTop: "60px"}}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/users" element={<Account user={user}/>}></Route>
@@ -70,7 +69,7 @@ export default function App() {
             element={<CategoryPage />}
           ></Route>
           <Route path="/jewellery" element={<JewelleryPage />}></Route>
-          <Route path="/orders/shoppingbag/checkout" element={<CheckoutPage order={cart} setCart={setCart} setIsBagVisible={setIsBagVisible}/>} />
+          <Route path="/orders/shoppingbag/checkout" element={<CheckoutPage user={user} order={cart} setCart={setCart} setIsBagVisible={setIsBagVisible}/>} />
           <Route path="/*" element={<Navigate to="/" />}></Route>
         </Routes>
       </div>
@@ -83,7 +82,7 @@ export default function App() {
         handleCheckout={handleCheckout}
         handleRemoveItem={handleRemoveItem}
       />
-      <Footer />
+      
     </main>
   );
 }
