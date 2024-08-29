@@ -33,7 +33,7 @@ Payment with Stripe</br>
 ### Next Steps:
 1. show order history on users account
 2. create workshop calendar and user can buy ticket
-3. wish list and CURD
+3. wish list
 4. spinner for page loading
 5. search bar
 6. recommendations based on purchase or browsing history
