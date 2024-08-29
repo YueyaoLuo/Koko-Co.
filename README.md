@@ -18,6 +18,9 @@ React + Node.js + Express + MongoDB + StripeAPI + AWS S3
 ```
 username: kiki@gmail.com
 password: 1234
+
+payment card number: 4242424242424242
+valid date, cvv and zip will make the payment successful
 ```
 
 ## Screenshots
