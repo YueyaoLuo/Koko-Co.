@@ -49,6 +49,8 @@ export default function PaymentForm({order, setCart, setIsBagVisible}) {
           setSuccess(true);
           setIsBagVisible(false);
           setCart(null);
+          console.log(order)
+
         }
       } catch (error) {
         console.log("Error", error);

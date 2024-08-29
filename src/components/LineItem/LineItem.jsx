@@ -2,8 +2,8 @@ export default function LineItem({ order, handleChangeQty, handleRemoveItem }) {
     
   return (
     <>
-      {order?.items.length > 0 ? (
-        order.items.map((item) => (
+   
+        {order.items.map((item) => (
           <div key={item._id} className="d-flex d-flex-bag align-items-stretch mb-3">
             <img
               src={item.jewellery.imageUrls[0]}
@@ -40,10 +40,8 @@ export default function LineItem({ order, handleChangeQty, handleRemoveItem }) {
             </div>
             <button className="align-items-center btn btn-light btn-delete" onClick={()=> handleRemoveItem(item.jewellery._id)}><ion-icon name="trash-outline"></ion-icon></button>
           </div>
-        ))
-      ) : (
-        <p></p>
-      )}
+        ))}
+
     </>
   );
 }

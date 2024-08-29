@@ -33,9 +33,12 @@ export default function Shoppingbag({
         {/* check if user loggin in */}
         {user ? (
           <>
-            <LineItem order={order} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
-            {order?.items.length > 0 ? (
+            
+            {!order || order.isPaid || order.items.length <= 0? (
+              <p className="empty-bag-text">Your shopping bag is empty.</p>
+            ) : (
               <>
+              <LineItem order={order} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
                 <div className="subtotal-text">
                   <p className="">SUBTOTAL</p>
                   <p className="">AU${order.orderTotal.toFixed(2)}</p>
@@ -49,8 +52,6 @@ export default function Shoppingbag({
                   </button>
                 </div>
               </>
-            ) : (
-              <p className="empty-bag-text">Your shopping bag is empty.</p>
             )}
           </>
         ) : (

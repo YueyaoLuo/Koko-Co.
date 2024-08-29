@@ -7,6 +7,7 @@ module.exports = {
     payment,
     revemoCartItem,
     create,
+    // clearShoppingbag,
 };
 
 // A cart is the unpaid order for a user
@@ -44,10 +45,14 @@ async function payment(req, res) {
             confirm: true,
             return_url: "https://kokoandco.onrender.com/orders/shoppingbag/checkout"
         })
+        const cart = await Order.getCart(req.user._id);
+        cart.isPaid = true;
+        await cart.save();
         console.log("Payment", payment)
         res.json({
             message: "Payment successful",
-            success: true
+            success: true,
+            cart,
         })
     } catch (error) {
         console.log("Error", error)

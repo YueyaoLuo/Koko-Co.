@@ -8,8 +8,8 @@ const stripePromise = loadStripe(
   "pk_test_51PoGp601fP1DApNTNDL9rrm4k6jMZCjlrRVbKsC2DKFeGqTBsSpG0wIp90O696kHx65GPDiJqzq2H2cFpRDe2Zlf00vujPVw0b"
 );
 
-export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
-  const userId = order.user;
+export default function CheckoutPage({ user, order, setCart, setIsBagVisible }) {
+  const userId = user._id;
   // console.log(userId);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -31,13 +31,11 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
         suburb: suburb,
         state: state,
         postcode: postcode,
-        items: order.items,
-        isPaid: false,
       };
       const response = await ordersAPI.createDeliveryDetail(newOrder);
-      console.log("Order created successfully:", response);
+      // console.log("Order created successfully:", response);
       if (response.success) {
-        console.log("Successful save delivery details");
+        // console.log("Successful save delivery details");
         setCreateSuccess(true);
       }
     } catch (err) {
@@ -48,7 +46,7 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
   return (
     <div className="checkout-form">
       {/* order details */}
-      <div className="container mt-4">
+      {/* <div className="container mt-4">
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="card">
@@ -84,7 +82,7 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* delivery details */}
       {!createSuccess ? (
         <div className="container mt-4">
@@ -123,7 +121,7 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
                     <div className="row mb-1">
                       <label>Phone number:</label>
                       <input
-                        type="number"
+                        type="text"
                         name="phone"
                         className="form-control"
                         onChange={(e) => setPhone(e.target.value)}
@@ -163,7 +161,7 @@ export default function CheckoutPage({ order, setCart, setIsBagVisible }) {
                     <div className="row mb-1">
                       <label>Postcode:</label>
                       <input
-                        type="number"
+                        type="text"
                         name="postcode"
                         className="form-control"
                         onChange={(e) => setPostcode(e.target.value)}
