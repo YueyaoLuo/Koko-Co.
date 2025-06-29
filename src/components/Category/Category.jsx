@@ -8,7 +8,7 @@ export default function Category(){
           <div className="card h-100 card-category">
             <Link className="nav-link category-link " to="/jewellery/newrelease">
               <img
-                src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Butterfly+vintage+2.jpg"
+                src="/images/necklace/Butterfly+vintage+2.jpg"
                 className="card-img-top category-img"
                 alt="new"
               ></img>
@@ -22,7 +22,7 @@ export default function Category(){
           <div className="card h-100 card-category">
             <Link className="nav-link category-link " to="/jewellery/bracelets">
               <img
-                src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/bracelets/Love+links+2.png"
+                src="/images/bracelets/Love+links+2.png"
                 className="card-img-top category-img"
                 alt="bracelet"
               ></img>
@@ -36,7 +36,7 @@ export default function Category(){
           <div className="card h-100 card-category">
             <Link className="nav-link category-link " to="/jewellery/earrings">
               <img
-                src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/earrings/Curly+C+2.png"
+                src="/images/earrings/Curly+C+2.png"
                 className="card-img-top category-img"
                 alt="earing"
               ></img>
@@ -50,7 +50,7 @@ export default function Category(){
           <div className="card h-100 card-category">
             <Link className="nav-link category-link " to="/jewellery/necklaces">
               <img
-                src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/necklace/Rose+avenue+1.jpg"
+                src="/images/necklace/Rose+avenue+1.jpg"
                 className="card-img-top category-img"
                 alt="necklace"
               ></img>
@@ -64,7 +64,7 @@ export default function Category(){
           <div className="card h-100 card-category">
             <Link className="nav-link category-link " to="/jewellery/rings">
               <img
-                src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/rings/miss+u+2.jpg"
+                src="/images/rings/miss+u+2.jpg"
                 className="card-img-top category-img"
                 alt="ring"
               ></img>

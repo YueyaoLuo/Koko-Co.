@@ -29,14 +29,14 @@ export default function GiftSeason(){
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/Home+page/gitf+season1.jpg"
+                    src="/images/home/gitf+season1.jpg"
                     className="d-block w-100"
                     alt="giftseason"
                   ></img>
                 </div>
                 <div className="carousel-item">
                   <img
-                    src="https://kokoandco.s3.ap-southeast-2.amazonaws.com/Home+page/gitf+season2.jpg"
+                    src="/images/home/gitf+season2.jpg"
                     className="d-block w-100"
                     alt="giftseason"
                   ></img>

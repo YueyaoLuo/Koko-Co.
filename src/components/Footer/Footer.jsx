@@ -14,12 +14,12 @@ export default function footer() {
                 Be the first to know about exciting new designs, special events,
                 store openings, and much more.
               </p>
-              <form className="d-flex mb-3">
+              <form className="d-flex gap-2 align-items-center mb-3">
                 <input
                   type="text"
                   name="input"
                   placeholder="Your email goes here..."
-                  className="form-control"
+                  // className="form-control"
                 />
                 <button className="btn btn-subscribe" type="submit">
                   Subscribe
